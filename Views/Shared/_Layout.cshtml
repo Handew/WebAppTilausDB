@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://kit.fontawesome.com/fb2c89db26.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="~/Home/Index">TilausDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="~/Home/About">Tietoja meistä</a></li>
+                <li class="nav-item"><a class="nav-link" href="~/Home/Contact">Yhteystiedot</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tietokannat</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="~/Tuotteet/Index">Tuotteet</a>
+                        <a class="dropdown-item" href="~/Henkilot/Index">Henkilöt</a>
+                        <a class="dropdown-item" href="~/Asiakkaats/Index">Asiakkaat</a>
+                        <a class="dropdown-item" href="~/Postitoimipaikats/Index">Postitoimipaikat</a>
+                        <a class="dropdown-item" href="~/Tilauksets/Index">Tilaukset</a>
+                        <a class="dropdown-item" href="~/Tilausrivits/Index">Tilausrivit</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse order-3">
+            <ul class="navbar-nav ml-auto">
+                @if (ViewBag.LoggedStatus == "In")
+                {
+                    <span style="font-size: 2em;">
+                        <li class="nav-item "><a class="nav-link fas fa-sign-in-alt" style="display:none" href="~/Home/Kirjautuminen"></a></li>
+                    </span>
+                    <span style="font-size:2em;">
+                        <li class="nav-item"><a class="nav-link fas fa-sign-out-alt" href="~/Home/LogOut"></a></li>
+                    </span>
+                    <p style="color:grey; font-size:0.9em;" @ViewBag.LoggedStatus>
+                    <b>Kirjautuneena:</b> <br />@Session["Kayttajatunnus"]
+                    </p>
+                }
+                else
+                {
+                    <span style="font-size: 2em;">
+                        <li class="nav-item "><a class="nav-link fas fa-sign-in-alt" href="~/Home/Kirjautuminen"></a></li>
+                    </span>
+
+                }
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - TilausDB</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

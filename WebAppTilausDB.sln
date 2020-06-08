@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppTilausDB", "WebAppTilausDB.csproj", "{75960103-6A93-4D4B-A816-BBB3A57DEA5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75960103-6A93-4D4B-A816-BBB3A57DEA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75960103-6A93-4D4B-A816-BBB3A57DEA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75960103-6A93-4D4B-A816-BBB3A57DEA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75960103-6A93-4D4B-A816-BBB3A57DEA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8401819A-A19B-424F-BDC4-1AE1D0A346B1}
+	EndGlobalSection
+EndGlobal
